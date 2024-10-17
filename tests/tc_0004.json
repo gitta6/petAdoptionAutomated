@@ -1,0 +1,8 @@
+{
+   "dummyName" : "Test User",
+   "dummyEmailIncorrect": "email.@@@",
+   "dummyEmailCorrect": "@test.test",
+   "dummyPassword": "pw",
+   "dummyAddress": "TestAddress",
+   "petName": "Pufi"
+}

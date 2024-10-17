@@ -1,0 +1,21 @@
+{
+   "genderOptions": [
+      "Nőstény",
+      "Hím"
+   ],
+   "genderSymbols":
+   [
+      "♀️",
+      "♂️"
+   ],
+   "speciesOptions":[
+      "Cat",
+      "Dog",
+      "Rabbit"
+   ],
+   "imageFormats": [
+      "jpg",
+      "png",
+      "bmp"
+   ]
+}

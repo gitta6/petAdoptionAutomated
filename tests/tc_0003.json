@@ -1,0 +1,6 @@
+{
+   "dummyEmailIncorrect": "dummyemail@@@",
+   "dummyEmailCorrect": "dummyemail@test.test",
+   "dummyPassword": "dummypassword123",
+   "incorrectPassword": "incorrectpassword123"
+}

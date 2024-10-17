@@ -1,0 +1,39 @@
+{
+    "petName": "Zizi",
+    "petName2": "Rexi",
+    "petArray": [
+        "Mirci",
+        "Sanyi",
+        "Zizi",
+        "Bubu",
+        "Tündér",
+        "Kicsi",
+        "Picúr"
+    ],
+    "petArray2": [
+        "Foltos",
+        "Rexi",
+        "Bubu",
+        "Pillecukor",
+        "Megatron",
+        "Gombóc",
+        "Picúr"
+    ],
+    "petArray3": [
+        "Mirci",
+        "Sanyi",
+        "Zizi",
+        "Tappancs Professzor",
+        "Pufi",
+        "Tündér"
+    ],
+    "location": "Debrecen",
+    "petName3": "Pufi",
+    "breed": "Maine Coon",
+    "petName4": "Tappancs Professzor",
+    "petArray4": [
+        "Muci",
+        "Bober",
+        "Kicsi"
+    ]
+}

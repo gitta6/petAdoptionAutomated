@@ -1,0 +1,45 @@
+{
+   "catsArray": [
+      "Mirci",
+      "Sanyi",
+      "Zizi",
+      "Tappancs Professzor",
+      "Pufi",
+      "Tündér"
+   ],
+   "dogsArray": [
+      "Foltos",
+      "Rexi",
+      "Bubu",
+      "Pillecukor",
+      "Megatron",
+      "Gombóc",
+      "Picúr"
+   ],
+   "rabbitsArray": [
+      "Muci",
+      "Bober",
+      "Kicsi"
+   ],
+   "malePetsArray": [
+      "Foltos",
+      "Rexi",
+      "Tappancs Professzor",
+      "Pufi",
+      "Pillecukor",
+      "Megatron",
+      "Muci",
+      "Bober",
+      "Gombóc"
+   ],
+   "femalePetsArray": [
+      "Mirci",
+      "Sanyi",
+      "Zizi",
+      "Bubu",
+      "Tündér",
+      "Kicsi",
+      "Picúr"
+   ],
+   "petName": "Pufi"
+}
