@@ -168,6 +168,7 @@ test('tc_0010', async ({ }, testInfo) => {
     await expect(page.getByText('Description: ' + petDescription)).toBeVisible();
     await expect(page.getByText('Categories:')).toBeVisible();
     await expect(page.getByRole('link', { name: speciesOptions[randomSpeciesIndex] })).toBeVisible();
+    await expect(page.getByRole('img', { name: petName }).first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Add to favorites!' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' })).toBeVisible();
     await expect(page.getByRole('button', { name: 'Delete' })).not.toBeVisible();
