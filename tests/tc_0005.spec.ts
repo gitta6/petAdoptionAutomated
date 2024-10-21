@@ -50,7 +50,7 @@ test('tc_0005', async ({ }, testInfo) => {
     await expect(page.locator('//text-input[contains(@label, "Password")]//input-validation').filter({ hasText: 'Enter a value!' })).not.toBeVisible();
   });
 
-  await test.step('Step 4: Enter the correct passsword for the selected test account. Click on the "LOGIN" button.', async () => {
+  await test.step('Step 4: Enter the correct password for the selected test account. Click on the "LOGIN" button.', async () => {
     await page.locator('form div').filter({ hasText: 'Password' }).locator('div').first().click();
     await page.getByPlaceholder('Password').fill('');
     await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { timeout: 500 });
@@ -151,7 +151,7 @@ test('tc_0005', async ({ }, testInfo) => {
     await expect((await page.locator("//a[contains(@routerLink, '/favorites-page')]//span[contains(text(), '4')]").first())).toBeVisible();
   });
 
-  await test.step('Step 14: Remove all the pets form Favorites.', async () => {
+  await test.step('Step 14: Remove all pets from Favorites.', async () => {
     for (let i = 0; i < 4; i++) {
       await page.locator("//button[contains(@class, 'remove-button')]").first().click();
       await delay(1500);

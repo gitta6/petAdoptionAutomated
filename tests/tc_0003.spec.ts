@@ -126,7 +126,7 @@ test('tc_0003', async ({ }, testInfo) => {
     await expect(page.getByText('Incorrect username or password!')).toBeVisible();
   });
 
-  await test.step('Step 11: Now enter the correct passsword for the selected test account. Click on the "LOGIN" button.', async () => {
+  await test.step('Step 11: Now enter the correct password for the selected test account. Click on the "LOGIN" button.', async () => {
     await page.locator('form div').filter({ hasText: 'Password' }).locator('div').first().click();
     await page.getByPlaceholder('Password').fill('');
     await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { timeout: 500 });

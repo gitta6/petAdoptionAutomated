@@ -52,7 +52,7 @@ test('tc_0008', async ({ }, testInfo) => {
     await expect(page.locator('//text-input[contains(@label, "Password")]//input-validation').filter({ hasText: 'Enter a value!' })).not.toBeVisible();
   });
 
-  await test.step('Step 4: Enter the correct passsword for the selected test account. Click on the "LOGIN" button.', async () => {
+  await test.step('Step 4: Enter the correct password for the selected test account. Click on the "LOGIN" button.', async () => {
     await page.locator('form div').filter({ hasText: 'Password' }).locator('div').first().click();
     await page.getByPlaceholder('Password').fill('');
     await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { timeout: 500 });
@@ -223,21 +223,21 @@ test('tc_0008', async ({ }, testInfo) => {
     await expect(page.getByText('Wrong format! Please upload a .jpg, .png or .bmp file!', { exact: true }).first()).toBeVisible();
   });
 
-  await test.step('Step 23: Now, select a .jpg file to the "Image" field.', async () => {
+  await test.step('Step 23: Now, select a .jpg file for the "Image" field.', async () => {
     await page.getByLabel('Image:').setInputFiles('example.jpg');
     
     await delay(1000);
     await expect(page.getByText('Wrong format! Please upload a .jpg, .png or .bmp file!', { exact: true }).first()).not.toBeVisible();
   });
 
-  await test.step('Step 24: Now, select a .png file to the "Image" field.', async () => {
+  await test.step('Step 24: Now, select a .png file for the "Image" field.', async () => {
     await page.getByLabel('Image:').setInputFiles('example.png');
 
     await delay(1000);
     await expect(page.getByText('Wrong format! Please upload a .jpg, .png or .bmp file!', { exact: true }).first()).not.toBeVisible();
   });
 
-  await test.step('Step 25: Now, select a .bmp file to the "Image" field.', async () => {
+  await test.step('Step 25: Now, select a .bmp file for the "Image" field.', async () => {
     await page.getByLabel('Image:').setInputFiles('example.bmp');
 
     await delay(1000);
