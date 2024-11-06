@@ -1,6 +1,8 @@
 import { test, expect, Page } from '@playwright/test';
 import testData from './tc_0008.json';
 import randomstring from 'randomstring';
+import sharedData from './sharedData.json';
+
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 let context;
@@ -11,6 +13,7 @@ var testUserPassword = process.env.TEST_USER_PASSWORD as string;
 var testUserName = process.env.TEST_USER_NAME as string;
 var optionName = testData.optionName;
 var formatOptions: string[] = testData.formatOptions;
+var pageUrl = sharedData.pageUrl;
 
 test.beforeAll(async ({ browser }) => {
   context = await browser.newContext();
@@ -23,7 +26,7 @@ test.afterAll(async () => {
 
 test('tc_0008', async ({ }, testInfo) => {
   await test.step('Step 1: Open PetAdoption.', async () => {
-    await page.goto('http://localhost:4200/');
+    await page.goto(pageUrl);
 
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
