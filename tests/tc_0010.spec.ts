@@ -45,6 +45,7 @@ test('tc_0010', async ({ }, testInfo) => {
 
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible();
   });
 
@@ -81,6 +82,7 @@ test('tc_0010', async ({ }, testInfo) => {
     await expect(page.getByText('Welcome to PetAdoption, ' + testUserName + '!')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible(); 
   });
 
@@ -216,6 +218,7 @@ test('tc_0010', async ({ }, testInfo) => {
     await expect(page.getByText('Welcome to PetAdoption, ' + testAdminUserName + '!')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible();
   });
 
@@ -247,6 +250,7 @@ test('tc_0010', async ({ }, testInfo) => {
     await delay(3000);
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible();
     await expect(page.getByRole('link', { name: petName }).first()).not.toBeVisible();
   });

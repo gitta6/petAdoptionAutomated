@@ -24,6 +24,7 @@ test('tc_0001', async ({ }, testInfo) => {
 
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible();
   });
 
@@ -65,6 +66,7 @@ test('tc_0001', async ({ }, testInfo) => {
 
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible(); 
   });
 
@@ -81,6 +83,7 @@ test('tc_0001', async ({ }, testInfo) => {
 
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible();
   });
 

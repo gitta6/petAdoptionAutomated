@@ -38,6 +38,7 @@ test('tc_0009', async ({ }, testInfo) => {
 
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible(); 
   });
 
@@ -64,6 +65,7 @@ test('tc_0009', async ({ }, testInfo) => {
     await expect(page.getByText('Welcome to PetAdoption, ' + testAdminUserName + '!')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible(); 
   });
 
@@ -147,6 +149,7 @@ test('tc_0009', async ({ }, testInfo) => {
 
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible(); 
     await expect(page.locator("//a[contains(@ng-reflect-router-link, '/pet/" + petId + "')]//\
       div[contains(@class, 'locations')][contains(text(), '" + randomLocation + "')] ").first()).toBeVisible();
@@ -194,6 +197,7 @@ test('tc_0009', async ({ }, testInfo) => {
 
     await expect(page.getByRole('link', { name: 'Pet Adoption' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Categories:' }).first()).toBeVisible();
+    await expect(page.locator('//ul[contains(@placeholder, "results")]').first()).toBeVisible();
     await expect(page.getByRole('button', { name: 'Adopt!' }).first()).not.toBeVisible(); 
     await expect(page.locator("//a[contains(@ng-reflect-router-link, '/pet/" + petId + "')]//\
       div[contains(@class, 'locations')][contains(text(), '" + originalLocation + "')] ").first()).toBeVisible();
