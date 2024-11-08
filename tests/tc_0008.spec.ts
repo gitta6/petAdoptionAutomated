@@ -47,7 +47,7 @@ test('tc_0008', async ({ }, testInfo) => {
   await test.step('Step 3: Enter a valid email address of a test account that does not have admin rights.', async () => {
     await page.locator('form div').filter({ hasText: 'Email' }).locator('div').first().click();
     await page.getByPlaceholder('Email').fill('');
-    await page.getByPlaceholder('Email').pressSequentially(testUserEmail, { timeout: 500 });
+    await page.getByPlaceholder('Email').pressSequentially(testUserEmail, { delay: 500 });
 
     await expect(page.locator('//text-input[contains(@label, "Email")]//input-validation').filter({ hasText: 'Enter a value!' })).not.toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Email")]//input-validation').filter({ hasText: 'Email is invalid!' })).not.toBeVisible();
@@ -59,7 +59,7 @@ test('tc_0008', async ({ }, testInfo) => {
   await test.step('Step 4: Enter the correct password for the selected test account. Click on the "LOGIN" button.', async () => {
     await page.locator('form div').filter({ hasText: 'Password' }).locator('div').first().click();
     await page.getByPlaceholder('Password').fill('');
-    await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { timeout: 500 });
+    await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { delay: 500 });
     await delay(2000);
     await page.getByRole('button', { name: 'LOGIN' }).click();
 
@@ -105,7 +105,7 @@ test('tc_0008', async ({ }, testInfo) => {
 
   await test.step('Step 8: Fill the "Name" field with a dummy value, then clear it. ', async () => {
     await page.getByLabel('Name:', { exact: true }).click();
-    await page.getByLabel('Name:', { exact: true }).pressSequentially(randomstring.generate(8), { timeout: 500 });
+    await page.getByLabel('Name:', { exact: true }).pressSequentially(randomstring.generate(8), { delay: 500 });
     await page.getByLabel('Name:', { exact: true }).fill('');
 
     await expect(page.getByText('Name is required!', { exact: true }).first()).toBeVisible();
@@ -132,7 +132,7 @@ test('tc_0008', async ({ }, testInfo) => {
     await page.getByLabel('Age:', { exact: true }).click();
     await page.getByLabel('Age:', { exact: true }).fill('');
     var randomDecimal = Math.floor(Math.random() * 15) + ',' + Math.floor(Math.random() * 10)
-    await page.getByLabel('Age:', { exact: true }).pressSequentially(randomDecimal, {timeout: 500});
+    await page.getByLabel('Age:', { exact: true }).pressSequentially(randomDecimal, {delay: 500});
 
     await expect(page.locator("//small[contains(text(), 'Age')]").first()).not.toBeVisible();
     await expect(page.getByText('Age is required!', { exact: true }).first()).not.toBeVisible();
@@ -143,7 +143,7 @@ test('tc_0008', async ({ }, testInfo) => {
     await page.getByLabel('Age:', { exact: true }).click();
     var randomDecimal = Math.floor(Math.random() * 15) + '.' + Math.floor(Math.random() * 10);
     await page.getByLabel('Age:', { exact: true }).fill('');
-    await page.getByLabel('Age:', { exact: true }).pressSequentially(randomDecimal.toString(), {timeout: 500});
+    await page.getByLabel('Age:', { exact: true }).pressSequentially(randomDecimal.toString(), {delay: 500});
 
     await expect(page.locator("//small[contains(text(), 'Age')]").first()).not.toBeVisible();
     await expect(page.getByText('Age is required!', { exact: true }).first()).not.toBeVisible();
@@ -152,7 +152,7 @@ test('tc_0008', async ({ }, testInfo) => {
 
   await test.step('Step 13: Fill the "Species" field with a dummy value, then clear it. ', async () => {
     await page.getByLabel('Species:', { exact: true }).click();
-    await page.getByLabel('Species:', { exact: true }).pressSequentially(randomstring.generate(8), { timeout: 500 });
+    await page.getByLabel('Species:', { exact: true }).pressSequentially(randomstring.generate(8), { delay: 500 });
     await page.getByLabel('Species:', { exact: true }).fill('');
 
     await expect(page.getByText('Species is required!', { exact: true }).first()).toBeVisible();
@@ -160,7 +160,7 @@ test('tc_0008', async ({ }, testInfo) => {
 
   await test.step('Step 14: Fill the "Breed" field with a dummy value, then clear it.', async () => {
     await page.getByLabel('Breed:', { exact: true }).click();
-    await page.getByLabel('Breed:', { exact: true }).pressSequentially(randomstring.generate(8), { timeout: 500 });
+    await page.getByLabel('Breed:', { exact: true }).pressSequentially(randomstring.generate(8), { delay: 500 });
     await page.getByLabel('Breed:', { exact: true }).fill('');
 
     await expect(page.getByText('Breed is required!', { exact: true }).first()).toBeVisible();
@@ -182,7 +182,7 @@ test('tc_0008', async ({ }, testInfo) => {
 
   await test.step('Step 17: Fill the "Color" field with a dummy value, then clear it.', async () => {
     await page.getByLabel('Color:', { exact: true }).click();
-    await page.getByLabel('Color:', { exact: true }).pressSequentially(randomstring.generate(8), { timeout: 500 });
+    await page.getByLabel('Color:', { exact: true }).pressSequentially(randomstring.generate(8), { delay: 500 });
     await page.getByLabel('Color:', { exact: true }).fill('');
 
     await expect(page.getByText('Color is required!', { exact: true }).first()).toBeVisible();
@@ -190,7 +190,7 @@ test('tc_0008', async ({ }, testInfo) => {
 
   await test.step('Step 18: Fill the "Description" field with a dummy value, then clear it.', async () => {
     await page.getByLabel('Description:', { exact: true }).click();
-    await page.getByLabel('Description:', { exact: true }).pressSequentially(randomstring.generate(30), { timeout: 200 });
+    await page.getByLabel('Description:', { exact: true }).pressSequentially(randomstring.generate(30), { delay: 200 });
     await page.getByLabel('Description:', { exact: true }).fill('');
 
     await expect(page.getByText('Description is required!', { exact: true }).first()).toBeVisible();
@@ -198,7 +198,7 @@ test('tc_0008', async ({ }, testInfo) => {
 
   await test.step('Step 19: Fill the "Location" field with a dummy value, then clear it.', async () => {
     await page.getByLabel('Location:', { exact: true }).click();
-    await page.getByLabel('Location:', { exact: true }).pressSequentially(randomstring.generate(8), { timeout: 500 });
+    await page.getByLabel('Location:', { exact: true }).pressSequentially(randomstring.generate(8), { delay: 500 });
     await page.getByLabel('Location:', { exact: true }).fill('');
 
     await expect(page.getByText('Location is required!', { exact: true }).first()).toBeVisible();
@@ -206,7 +206,7 @@ test('tc_0008', async ({ }, testInfo) => {
 
   await test.step('Step 20: Fill the "Owner\'s name" field with a dummy value, then clear it.', async () => {
     await page.getByLabel('Owner\'s name:', { exact: true }).click();
-    await page.getByLabel('Owner\'s name:', { exact: true }).pressSequentially(randomstring.generate(15), { timeout: 200 });
+    await page.getByLabel('Owner\'s name:', { exact: true }).pressSequentially(randomstring.generate(15), { delay: 200 });
     await page.getByLabel('Owner\'s name:', { exact: true }).fill('');
 
     await expect(page.getByText('The owner\'s name is required!', { exact: true }).first()).toBeVisible();
@@ -214,7 +214,7 @@ test('tc_0008', async ({ }, testInfo) => {
 
   await test.step('Step 21: Fill the "Owner\'s phone number" field with a dummy value, then clear it.', async () => {
     await page.getByLabel('Owner\'s phone number:', { exact: true }).click();
-    await page.getByLabel('Owner\'s phone number:', { exact: true }).pressSequentially(randomstring.generate({ length: 11, charset: 'numeric'}), { timeout: 200 });
+    await page.getByLabel('Owner\'s phone number:', { exact: true }).pressSequentially(randomstring.generate({ length: 11, charset: 'numeric'}), { delay: 200 });
     await page.getByLabel('Owner\'s phone number:', { exact: true }).fill('');
 
     await expect(page.getByText('The owner\'s phone number is required!', { exact: true }).first()).toBeVisible();

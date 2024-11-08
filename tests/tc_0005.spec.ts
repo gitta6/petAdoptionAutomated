@@ -45,7 +45,7 @@ test('tc_0005', async ({ }, testInfo) => {
   await test.step('Step 3: Enter a valid email address of a test account that does not have admin rights.', async () => {
     await page.locator('form div').filter({ hasText: 'Email' }).locator('div').first().click();
     await page.getByPlaceholder('Email').fill('');
-    await page.getByPlaceholder('Email').pressSequentially(testUserEmail, { timeout: 500 });
+    await page.getByPlaceholder('Email').pressSequentially(testUserEmail, { delay: 500 });
 
     await expect(page.locator('//text-input[contains(@label, "Email")]//input-validation').filter({ hasText: 'Enter a value!' })).not.toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Email")]//input-validation').filter({ hasText: 'Email is invalid!' })).not.toBeVisible();
@@ -57,7 +57,7 @@ test('tc_0005', async ({ }, testInfo) => {
   await test.step('Step 4: Enter the correct password for the selected test account. Click on the "LOGIN" button.', async () => {
     await page.locator('form div').filter({ hasText: 'Password' }).locator('div').first().click();
     await page.getByPlaceholder('Password').fill('');
-    await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { timeout: 500 });
+    await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { delay: 500 });
     await delay(2000);
     await page.getByRole('button', { name: 'LOGIN' }).click();
 
