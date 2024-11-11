@@ -62,7 +62,7 @@ test('tc_0010', async ({ }, testInfo) => {
   await test.step('Step 3: Enter a valid email address of a test account that does not have admin rights.', async () => {
     await page.locator('form div').filter({ hasText: 'Email' }).locator('div').first().click();
     await page.getByPlaceholder('Email').fill('');
-    await page.getByPlaceholder('Email').pressSequentially(testUserEmail, { delay: 500 });
+    await page.getByPlaceholder('Email').pressSequentially(testUserEmail, { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Email")]//input-validation').filter({ hasText: 'Enter a value!' })).not.toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Email")]//input-validation').filter({ hasText: 'Email is invalid!' })).not.toBeVisible();
@@ -74,7 +74,7 @@ test('tc_0010', async ({ }, testInfo) => {
   await test.step('Step 4: Enter the correct password for the selected test account. Click on the "LOGIN" button.', async () => {
     await page.locator('form div').filter({ hasText: 'Password' }).locator('div').first().click();
     await page.getByPlaceholder('Password').fill('');
-    await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { delay: 500 });
+    await page.getByPlaceholder('Password').pressSequentially(testUserPassword, { delay: 100 });
     await delay(2000);
     await page.getByRole('button', { name: 'LOGIN' }).click();
 
@@ -116,33 +116,33 @@ test('tc_0010', async ({ }, testInfo) => {
     and select any gender. For the "Name" field, enter a unique value and in the "Species" field, \
     enter "cat", "dog" or "rabbit". Click on the "Upload Pet" button.', async () => {
     await page.getByLabel('Name:', { exact: true }).click();
-    await page.getByLabel('Name:', { exact: true }).pressSequentially(petName, { delay: 500 });
+    await page.getByLabel('Name:', { exact: true }).pressSequentially(petName, { delay: 100 });
 
     await page.getByLabel('Age:', { exact: true }).click();
     await page.getByLabel('Age:', { exact: true }).fill(petAge.toString());
 
     await page.getByLabel('Species:', { exact: true }).click();
-    await page.getByLabel('Species:', { exact: true }).pressSequentially(speciesOptions[randomSpeciesIndex], { delay: 500 });
+    await page.getByLabel('Species:', { exact: true }).pressSequentially(speciesOptions[randomSpeciesIndex], { delay: 100 });
 
     await page.getByLabel('Breed:', { exact: true }).click();
-    await page.getByLabel('Breed:', { exact: true }).pressSequentially(petBreed, { delay: 500 });
+    await page.getByLabel('Breed:', { exact: true }).pressSequentially(petBreed, { delay: 100 });
 
     await page.getByLabel('Gender:').selectOption(genderOptions[randomGenderIndex]);
 
     await page.getByLabel('Color:', { exact: true }).click();
-    await page.getByLabel('Color:', { exact: true }).pressSequentially(petColor, { delay: 500 });
+    await page.getByLabel('Color:', { exact: true }).pressSequentially(petColor, { delay: 100 });
 
     await page.getByLabel('Description:', { exact: true }).click();
-    await page.getByLabel('Description:', { exact: true }).pressSequentially(petDescription, { delay: 200 });
+    await page.getByLabel('Description:', { exact: true }).pressSequentially(petDescription, { delay: 100 });
 
     await page.getByLabel('Location:', { exact: true }).click();
-    await page.getByLabel('Location:', { exact: true }).pressSequentially(petLocation, { delay: 500 });
+    await page.getByLabel('Location:', { exact: true }).pressSequentially(petLocation, { delay: 100 });
 
     await page.getByLabel('Owner\'s name:', { exact: true }).click();
-    await page.getByLabel('Owner\'s name:', { exact: true }).pressSequentially(ownersName, { delay: 200 });
+    await page.getByLabel('Owner\'s name:', { exact: true }).pressSequentially(ownersName, { delay: 100 });
 
     await page.getByLabel('Owner\'s phone number:', { exact: true }).click();
-    await page.getByLabel('Owner\'s phone number:', { exact: true }).pressSequentially(ownersPhoneNumber, { delay: 200 });
+    await page.getByLabel('Owner\'s phone number:', { exact: true }).pressSequentially(ownersPhoneNumber, { delay: 100 });
 
     await page.getByRole('button', { name: 'Upload Pet' }).first().click();
 
@@ -208,9 +208,9 @@ test('tc_0010', async ({ }, testInfo) => {
   await test.step('Step 13: Enter a valid email address of a test account that has admin rights. \
     Then, enter the correct password for the selected test account and click on the "LOGIN" button.', async () => {
     await page.locator('form div').filter({ hasText: 'Email' }).locator('div').first().click();
-    await page.getByPlaceholder('Email').pressSequentially(testAdminUserEmail, { delay: 500 });
+    await page.getByPlaceholder('Email').pressSequentially(testAdminUserEmail, { delay: 100 });
     await page.locator('form div').filter({ hasText: 'Password' }).locator('div').first().click();
-    await page.getByPlaceholder('Password').pressSequentially(testAdminUserPassword, { delay: 500 });
+    await page.getByPlaceholder('Password').pressSequentially(testAdminUserPassword, { delay: 100 });
     await delay(2000);
     await page.getByRole('button', { name: 'LOGIN' }).click();
 
@@ -258,7 +258,7 @@ test('tc_0010', async ({ }, testInfo) => {
   await test.step('Step 16: Click on the search bar and enter the name of the previously deleted pet. Click on the search icon.', async () => {
     await page.getByPlaceholder('Search for pets...').click();
     await page.getByPlaceholder('Search for pets...').fill('');
-    await page.getByPlaceholder('Search for pets...').pressSequentially(petName, { delay: 500 });
+    await page.getByPlaceholder('Search for pets...').pressSequentially(petName, { delay: 100 });
     await page.getByPlaceholder('searchButton').first().click();
 
     await expect(page.getByRole('link', { name: petName }).first()).not.toBeVisible();

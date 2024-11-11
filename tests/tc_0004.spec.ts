@@ -67,7 +67,7 @@ test('tc_0004', async ({ }, testInfo) => {
 
   await test.step('Step 5: Enter 4 characters in the "Name" field (can be random letters).', async () => {
     await page.getByPlaceholder('Name').click();
-    await page.getByPlaceholder('Name').pressSequentially(randomstring.generate(4), { delay: 300 });
+    await page.getByPlaceholder('Name').pressSequentially(randomstring.generate(4), { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Name")]//input-validation').filter({ hasText: 'This value needs to be longer.' })).toBeVisible();
     for (let i = 0; i < 4; i++) {
@@ -90,7 +90,7 @@ test('tc_0004', async ({ }, testInfo) => {
   await test.step('Step 7: Now enter a dummy name in the "Name" field that is longer than 4 characters.', async () => {
     await page.getByPlaceholder('Name').click();
     await page.getByPlaceholder('Name').fill('');
-    await page.getByPlaceholder('Name').pressSequentially(dummyName, { delay: 300 });
+    await page.getByPlaceholder('Name').pressSequentially(dummyName, { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Name")]//input-validation').filter({ hasText: 'This value needs to be longer.' })).not.toBeVisible();
     for (let i = 0; i < 4; i++) {
@@ -101,7 +101,7 @@ test('tc_0004', async ({ }, testInfo) => {
 
   await test.step('Step 8: In the "Email" field, enter a test email address with a wrong format.', async () => {
     await page.getByPlaceholder('Email').click();
-    await page.getByPlaceholder('Email').pressSequentially(dummyEmailIncorrect, { delay: 300 });
+    await page.getByPlaceholder('Email').pressSequentially(dummyEmailIncorrect, { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Email")]//input-validation').filter({ hasText: 'Email is invalid.' })).toBeVisible();
     for (let i = 0; i < 3; i++) {
@@ -114,7 +114,7 @@ test('tc_0004', async ({ }, testInfo) => {
   await test.step('Step 9: Now enter a dummy email address with the correct format.', async () => {
     await page.getByPlaceholder('Email').click();
     await page.getByPlaceholder('Email').fill('');
-    await page.getByPlaceholder('Email').pressSequentially(dummyEmailCorrect, { delay: 300 });
+    await page.getByPlaceholder('Email').pressSequentially(dummyEmailCorrect, { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Email")]//input-validation').filter({ hasText: 'Email is invalid.' })).not.toBeVisible();
     for (let i = 0; i < 3; i++) {
@@ -126,7 +126,7 @@ test('tc_0004', async ({ }, testInfo) => {
 
   await test.step('Step 10: In the "Password" field, enter 5 characters (can be random letters, numbers, symbols, etc.)', async () => {
     await page.getByPlaceholder('Password').first().click();
-    await page.getByPlaceholder('Password').first().pressSequentially(randomstring.generate(5), { delay: 300 });
+    await page.getByPlaceholder('Password').first().pressSequentially(randomstring.generate(5), { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Password")]//input-validation').filter({ hasText: 'This value needs to be longer.' })).toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Password again")]//input-validation').filter({ hasText: 'The two passwords do not match!' })).toBeVisible();
@@ -139,7 +139,7 @@ test('tc_0004', async ({ }, testInfo) => {
   await test.step('Step 11: Now in the "Password" field, enter any password that is longer than 5 characters.', async () => {
     await page.getByPlaceholder('Password').first().click();
     await page.getByPlaceholder('Password').first().fill('');
-    await page.getByPlaceholder('Password').first().pressSequentially(dummyPassword, { delay: 300 });
+    await page.getByPlaceholder('Password').first().pressSequentially(dummyPassword, { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Password")]//input-validation').filter({ hasText: 'This value needs to be longer.' })).not.toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Password again")]//input-validation').filter({ hasText: 'The two passwords do not match!' })).toBeVisible();
@@ -151,7 +151,7 @@ test('tc_0004', async ({ }, testInfo) => {
 
   await test.step('Step 12: In the "Password again" field, enter any password, but not the same as in the previous step.', async () => {
     await page.getByPlaceholder('Password again').first().click();
-    await page.getByPlaceholder('Password again').first().pressSequentially(randomstring.generate(7), { delay: 300 });
+    await page.getByPlaceholder('Password again').first().pressSequentially(randomstring.generate(7), { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Password")]//input-validation').filter({ hasText: 'This value needs to be longer.' })).not.toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Password again")]//input-validation').filter({ hasText: 'The two passwords do not match!' })).toBeVisible();
@@ -164,7 +164,7 @@ test('tc_0004', async ({ }, testInfo) => {
   await test.step('Step 13: In the "Password again" field, enter the same password as in Step 11.', async () => {
     await page.getByPlaceholder('Password again').first().click();
     await page.getByPlaceholder('Password again').first().fill('');
-    await page.getByPlaceholder('Password again').first().pressSequentially(dummyPassword, { delay: 300 });
+    await page.getByPlaceholder('Password again').first().pressSequentially(dummyPassword, { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Password")]//input-validation').filter({ hasText: 'This value needs to be longer.' })).not.toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Password again")]//input-validation').filter({ hasText: 'The two passwords do not match!' })).not.toBeVisible();
@@ -176,7 +176,7 @@ test('tc_0004', async ({ }, testInfo) => {
 
   await test.step('Step 14: In the "Address" field, enter 2 characters (can be random letters).', async () => {
     await page.getByPlaceholder('Address').first().click();
-    await page.getByPlaceholder('Address').first().pressSequentially(randomstring.generate(2), { delay: 300 });
+    await page.getByPlaceholder('Address').first().pressSequentially(randomstring.generate(2), { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Password again")]//input-validation').filter({ hasText: 'This value needs to be longer.' })).not.toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Password again")]//input-validation').filter({ hasText: 'The two passwords do not match!' })).not.toBeVisible();
@@ -189,7 +189,7 @@ test('tc_0004', async ({ }, testInfo) => {
   await test.step('Step 15: Now enter any location in the "Address" field that has 3 or more characters.', async () => {
     await page.getByPlaceholder('Address').first().click();
     await page.getByPlaceholder('Address').first().fill('');
-    await page.getByPlaceholder('Address').first().pressSequentially(dummyAddress, { delay: 300 });
+    await page.getByPlaceholder('Address').first().pressSequentially(dummyAddress, { delay: 100 });
 
     await expect(page.locator('//text-input[contains(@label, "Password again")]//input-validation').filter({ hasText: 'This value needs to be longer.' })).not.toBeVisible();
     await expect(page.locator('//text-input[contains(@label, "Password again")]//input-validation').filter({ hasText: 'The two passwords do not match!' })).not.toBeVisible();

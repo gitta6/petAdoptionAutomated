@@ -40,7 +40,7 @@ test('tc_0002', async ({ }, testInfo) => {
     displayed on the home screen. Click on the search icon.', async () => {
     await page.getByPlaceholder('Search for pets...').click();
     await page.getByPlaceholder('Search for pets...').fill('');
-    await page.getByPlaceholder('Search for pets...').pressSequentially(petName, { delay: 500 });
+    await page.getByPlaceholder('Search for pets...').pressSequentially(petName, { delay: 100 });
     await page.getByPlaceholder('searchButton').first().click();
 
     await expect(page.getByRole('link', { name: petName }).first()).toBeVisible();
@@ -61,7 +61,7 @@ test('tc_0002', async ({ }, testInfo) => {
     that is displayed on the home screen. After that, press "Enter".', async () => {
     await page.getByPlaceholder('Search for pets...').click();
     await page.getByPlaceholder('Search for pets...').fill('');
-    await page.getByPlaceholder('Search for pets...').pressSequentially(petName2, { delay: 500 });
+    await page.getByPlaceholder('Search for pets...').pressSequentially(petName2, { delay: 100 });
     await page.getByPlaceholder('Search for pets...').press('Enter');
 
     await expect(page.getByRole('link', { name: petName2 }).first()).toBeVisible();
@@ -73,7 +73,7 @@ test('tc_0002', async ({ }, testInfo) => {
     then click on the search icon.', async () => {
     await page.getByPlaceholder('Search for pets...').click();
     await page.getByPlaceholder('Search for pets...').fill('');
-    await page.getByPlaceholder('Search for pets...').pressSequentially('Female', { delay: 500 });
+    await page.getByPlaceholder('Search for pets...').pressSequentially('Female', { delay: 100 });
     await page.getByPlaceholder('searchButton').first().click();
 
     for (let i = 0; i < petArray.length; i++) {
@@ -87,7 +87,7 @@ test('tc_0002', async ({ }, testInfo) => {
     then click on the search icon.', async () => {
     await page.getByPlaceholder('Search for pets...').click();
     await page.getByPlaceholder('Search for pets...').fill('');
-    await page.getByPlaceholder('Search for pets...').pressSequentially('Dog', { delay: 500 });
+    await page.getByPlaceholder('Search for pets...').pressSequentially('Dog', { delay: 100 });
     await page.getByPlaceholder('searchButton').first().click();
 
     for (let i = 0; i < petArray2.length; i++) {
@@ -112,7 +112,7 @@ test('tc_0002', async ({ }, testInfo) => {
     that returns a result. Click on the search icon.', async () => {
     await page.getByPlaceholder('Search for pets...').click();
     await page.getByPlaceholder('Search for pets...').fill('');
-    await page.getByPlaceholder('Search for pets...').pressSequentially(location, { delay: 500 });
+    await page.getByPlaceholder('Search for pets...').pressSequentially(location, { delay: 100 });
     await page.getByPlaceholder('searchButton').first().click();
 
     await expect(page.getByRole('link', { name: petName3 }).first()).toBeVisible();
@@ -125,7 +125,7 @@ test('tc_0002', async ({ }, testInfo) => {
     that returns a result (e.g. Maine Coon). Click on the search icon.', async () => {
     await page.getByPlaceholder('Search for pets...').click();
     await page.getByPlaceholder('Search for pets...').fill('');
-    await page.getByPlaceholder('Search for pets...').pressSequentially(breed, { delay: 500 });
+    await page.getByPlaceholder('Search for pets...').pressSequentially(breed, { delay: 100 });
     await page.getByPlaceholder('searchButton').first().click();
 
     await expect(page.getByRole('link', { name: petName4 }).first()).toBeVisible();
@@ -136,7 +136,7 @@ test('tc_0002', async ({ }, testInfo) => {
   await test.step('Step 10: Click on the search bar again, and enter "Rabbit". Click on the search icon.', async () => {
     await page.getByPlaceholder('Search for pets...').click();
     await page.getByPlaceholder('Search for pets...').fill('');
-    await page.getByPlaceholder('Search for pets...').pressSequentially('Rabbit', { delay: 500 });
+    await page.getByPlaceholder('Search for pets...').pressSequentially('Rabbit', { delay: 100 });
     await page.getByPlaceholder('searchButton').first().click();
 
     for (let i = 0; i < petArray4.length; i++) {

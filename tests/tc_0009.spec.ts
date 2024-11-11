@@ -55,9 +55,9 @@ test('tc_0009', async ({ }, testInfo) => {
   await test.step('Step 3: Enter a valid email address of a test account that has admin rights. \
     Then, enter the correct password for the selected test account and click on the "LOGIN" button.', async () => {
     await page.locator('form div').filter({ hasText: 'Email' }).locator('div').first().click();
-    await page.getByPlaceholder('Email').pressSequentially(testAdminUserEmail, { delay: 500 });
+    await page.getByPlaceholder('Email').pressSequentially(testAdminUserEmail, { delay: 100 });
     await page.locator('form div').filter({ hasText: 'Password' }).locator('div').first().click();
-    await page.getByPlaceholder('Password').pressSequentially(testAdminUserPassword, { delay: 500 });
+    await page.getByPlaceholder('Password').pressSequentially(testAdminUserPassword, { delay: 100 });
     await delay(2000);
     await page.getByRole('button', { name: 'LOGIN' }).click({ force: true });
 
@@ -122,15 +122,15 @@ test('tc_0009', async ({ }, testInfo) => {
     and also change the "Age" field to a new value (positive number). Click on "Save Changes".', async () => {
     await page.getByLabel('Description:', { exact: true }).click();
     await page.getByLabel('Description:', { exact: true }).fill('');
-    await page.getByLabel('Description:', { exact: true }).pressSequentially(randomDescription, { delay: 200 });
+    await page.getByLabel('Description:', { exact: true }).pressSequentially(randomDescription, { delay: 100 });
     await delay(500);
     await page.getByLabel('Color:', { exact: true }).click();
     await page.getByLabel('Color:', { exact: true }).fill('');
-    await page.getByLabel('Color:', { exact: true }).pressSequentially(randomColor, { delay: 200 });
+    await page.getByLabel('Color:', { exact: true }).pressSequentially(randomColor, { delay: 100 });
     await delay(500);
     await page.getByLabel('Location:', { exact: true }).click();
     await page.getByLabel('Location:', { exact: true }).fill('');
-    await page.getByLabel('Location:', { exact: true }).pressSequentially(randomLocation, { delay: 200 });
+    await page.getByLabel('Location:', { exact: true }).pressSequentially(randomLocation, { delay: 100 });
     await delay(500);
     await page.getByLabel('Age:', { exact: true }).click();
     await page.getByLabel('Age:', { exact: true }).fill(randomAge.toString());
@@ -170,15 +170,15 @@ test('tc_0009', async ({ }, testInfo) => {
     and "Location" fields back to their original values. Click on "Save Changes".', async () => {
     await page.getByLabel('Description:', { exact: true }).click();
     await page.getByLabel('Description:', { exact: true }).fill('');
-    await page.getByLabel('Description:', { exact: true }).pressSequentially(originalDescription, { delay: 200 });
+    await page.getByLabel('Description:', { exact: true }).pressSequentially(originalDescription, { delay: 100 });
     await delay(500);
     await page.getByLabel('Color:', { exact: true }).click();
     await page.getByLabel('Color:', { exact: true }).fill('');
-    await page.getByLabel('Color:', { exact: true }).pressSequentially(originalColor, { delay: 200 });
+    await page.getByLabel('Color:', { exact: true }).pressSequentially(originalColor, { delay: 100 });
     await delay(500);
     await page.getByLabel('Location:', { exact: true }).click();
     await page.getByLabel('Location:', { exact: true }).fill('');
-    await page.getByLabel('Location:', { exact: true }).pressSequentially(originalLocation, { delay: 200 });
+    await page.getByLabel('Location:', { exact: true }).pressSequentially(originalLocation, { delay: 100 });
     await delay(500);
     await page.getByLabel('Age:', { exact: true }).click();
     await page.getByLabel('Age:', { exact: true }).fill(originalAge.toString());
