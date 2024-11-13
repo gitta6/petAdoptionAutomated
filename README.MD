@@ -32,7 +32,9 @@ To install the required dependencies, run the following commands:
 
 
 ### Step 3: Running the automated tests
-Once the dependencies are installed, you can run the automated tests. To run the tests using 1 worker, use the following command:
+Once the dependencies are installed, you can run the automated tests. 
+Make sure that the Pet Automation web application is already running!
+To run the tests using 1 worker, use the following command:
 
 `npx playwright test --workers=1 `
 
