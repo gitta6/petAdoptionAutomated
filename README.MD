@@ -42,6 +42,8 @@ or
 
 to run only a specific test file.
 
+(Test cases can also be executed without using the terminal: simply open the test file and click on the green "play" icon that is placed on the left side of the test definition line!)
+
 ### Step 4: Viewing the test results
 
 Once the tests are finished, Playwright will display the results in the terminal. 
